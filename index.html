@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Certificates</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f7fb;
+            color: #222;
+        }
+
+        header {
+            background: linear-gradient(135deg, #1f4ed8, #673ab7);
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        header h1 {
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 17px;
+            opacity: 0.9;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 35px auto;
+            padding: 0 20px;
+        }
+
+        .top-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+
+        .top-bar h2 {
+            color: #1f4ed8;
+        }
+
+        .search {
+            width: 280px;
+            padding: 13px 16px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 15px;
+            outline: none;
+        }
+
+        .search:focus {
+            border-color: #1f4ed8;
+        }
+
+        .certificates {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 22px;
+        }
+
+        .certificate {
+            background: white;
+            border-radius: 14px;
+            padding: 24px;
+            box-shadow: 0 5px 18px rgba(0, 0, 0, 0.08);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .certificate:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+        }
+
+        .certificate-icon {
+            font-size: 40px;
+            margin-bottom: 15px;
+        }
+
+        .certificate h3 {
+            color: #1f4ed8;
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .certificate p {
+            color: #666;
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .view-btn,
+        .download-btn {
+            display: inline-block;
+            padding: 10px 15px;
+            border-radius: 7px;
+            text-decoration: none;
+            font-size: 14px;
+            cursor: pointer;
+        }
+
+        .view-btn {
+            background: #1f4ed8;
+            color: white;
+        }
+
+        .view-btn:hover {
+            background: #163aa3;
+        }
+
+        .download-btn {
+            background: #eeeeee;
+            color: #333;
+        }
+
+        .download-btn:hover {
+            background: #dddddd;
+        }
+
+        .no-results {
+            display: none;
+            text-align: center;
+            padding: 40px;
+            color: #777;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            margin-top: 40px;
+            color: #777;
+        }
+
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 28px;
+            }
+
+            .search {
+                width: 100%;
+            }
+
+            .top-bar {
+                align-items: stretch;
+            }
+
+            .certificate {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>📜 My Certificates</h1>
+        <p>My personal certificate collection</p>
+    </header>
+
+    <main class="container">
+
+        <div class="top-bar">
+            <h2>My Certificates</h2>
+
+            <input
+                type="text"
+                id="search"
+                class="search"
+                placeholder="🔎 Search certificates..."
+                onkeyup="searchCertificates()"
+            >
+        </div>
+
+        <div class="certificates" id="certificateList">
+
+            <!-- Android Developer -->
+            <div class="certificate">
+                <div class="certificate-icon">📱</div>
+                <h3>Android Developer</h3>
+                <p>EduSkills Certificate</p>
+
+                <div class="buttons">
+                    <a
+                        href="certificates/andriod_developer_eduskills.pdf"
+                        class="view-btn"
+                        target="_blank">
+                        👁 View
+                    </a>
+
+                    <a
+                        href="certificates/andriod_developer_eduskills.pdf"
+                        class="download-btn"
+                        download>
+                        ⬇ Download
+                    </a>
+                </div>
+            </div>
+
+
+            <!-- C Essentials -->
+            <div class="certificate">
+                <div class="certificate-icon">💻</div>
+                <h3>C Essentials</h3>
+                <p>C programming certificate</p>
+
+                <div class="buttons">
+                    <a
+                        href="certificates/CEssentials2.pdf"
+                        class="view-btn"
+                        target="_blank">
+                        👁 View
+                    </a>
+
+                    <a
+                        href="certificates/CEssentials2.pdf"
+                        class="download-btn"
+                        download>
+                        ⬇ Download
+                    </a>
+                </div>
+            </div>
+
+
+            <!-- Python Essentials 2 -->
+            <div class="certificate">
+                <div class="certificate-icon">🐍</div>
+                <h3>Python Essentials 2</h3>
+                <p>Python programming certificate</p>
+
+                <div class="buttons">
+                    <a
+                        href="certificates/PythonEssentials2.pdf"
+                        class="view-btn"
+                        target="_blank">
+                        👁 View
+                    </a>
+
+                    <a
+                        href="certificates/PythonEssentials2.pdf"
+                        class="download-btn"
+                        download>
+                        ⬇ Download
+                    </a>
+                </div>
+            </div>
+
+
+            <!-- Python Essentials 1 -->
+            <div class="certificate">
+                <div class="certificate-icon">🐍</div>
+                <h3>Python Essentials 1</h3>
+                <p>Python programming certificate</p>
+
+                <div class="buttons">
+                    <a
+                        href="certificates/PythonEssentials1.pdf"
+                        class="view-btn"
+                        target="_blank">
+                        👁 View
+                    </a>
+
+                    <a
+                        href="certificates/PythonEssentials1.pdf"
+                        class="download-btn"
+                        download>
+                        ⬇ Download
+                    </a>
+                </div>
+            </div>
+
+
+            <!-- Prompt Engineering -->
+            <div class="certificate">
+                <div class="certificate-icon">🤖</div>
+                <h3>Prompt Engineering</h3>
+                <p>EduSkills Certificate</p>
+
+                <div class="buttons">
+                    <a
+                        href="certificates/prompt_engineering_eduskills.pdf"
+                        class="view-btn"
+                        target="_blank">
+                        👁 View
+                    </a>
+
+                    <a
+                        href="certificates/prompt_engineering_eduskills.pdf"
+                        class="download-btn"
+                        download>
+                        ⬇ Download
+                    </a>
+                </div>
+            </div>
+
+        </div>
+
+        <div id="noResults" class="no-results">
+            <h3>No certificates found</h3>
+            <p>Try a different search.</p>
+        </div>
+
+    </main>
+
+    <footer>
+        © 2026 My Certificates
+    </footer>
+
+
+    <script>
+
+        function searchCertificates() {
+
+            const searchText =
+                document.getElementById("search").value.toLowerCase();
+
+            const certificates =
+                document.querySelectorAll(".certificate");
+
+            let visibleCount = 0;
+
+            certificates.forEach(function(certificate) {
+
+                const text =
+                    certificate.innerText.toLowerCase();
+
+                if (text.includes(searchText)) {
+                    certificate.style.display = "";
+                    visibleCount++;
+                } else {
+                    certificate.style.display = "none";
+                }
+
+            });
+
+            const noResults =
+                document.getElementById("noResults");
+
+            if (visibleCount === 0) {
+                noResults.style.display = "block";
+            } else {
+                noResults.style.display = "none";
+            }
+        }
+
+    </script>
+
+</body>
+</html>
